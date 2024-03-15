@@ -25,22 +25,22 @@ export class HomeComponent {
 
   dropdownOpen = false;
 
-
-
-  // sidebarVisible = false;
-
-  // sidebaropen = true
-
- 
-
   handleClick(event: MouseEvent) {
     const element = event.currentTarget as HTMLElement;
     element.classList.add('clicked');
     setTimeout(() => {
         element.classList.remove('clicked');
     }, 400);
-    // Your other click logic here
-    console.log('Paragraph clicked!');
+
+}
+
+showsidebar(){
+  this.sidebarvisible=!this.sidebarvisible;
+}
+
+changestate(){
+  
+  this.sidebarvisible = false;
 }
 
 
@@ -56,17 +56,5 @@ Joinclass(){
 Createclass(){
    this.router.navigate(['/CreateClass'])
 }
-
-// toggleSidebar() {
-//   this.sidebarvisible= true
-// }
-
-// recive an output from the child and making the sidebarvisable to be false
-// func(){
-
-// }
-
-
-
 
 }

@@ -1,12 +1,10 @@
-
     <!-- Sidebar content goes here -->
     <div class="card flex justify-content-center">
-        <p-sidebar [(visible)]="sidebarVisible">
+        <p-sidebar [visible]="sidebarVisible" (visibleChange)="onSidebarVisibleChange($event)">
             <ng-template pTemplate="header">Header Content</ng-template>
             <ng-template pTemplate="content">Body Content</ng-template>
             <ng-template pTemplate="footer">Footer Content</ng-template>
         </p-sidebar>
-        <!-- <p-button (click)="sidebarVisible = true" icon="pi pi-arrow-right"></p-button> -->
     </div>
 
 

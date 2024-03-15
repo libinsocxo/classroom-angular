@@ -12,14 +12,13 @@ import { NgIf } from '@angular/common';
   styleUrl: './sidebar.component.scss'
 })
 export class SidebarComponent {
-  // sidebarVisible: boolean = false;
-
-  @Input() sidebarVisible:boolean =false
-  // @Output() changethestateback = new EventEmitter<any>();
+ 
+  @Input() sidebarVisible:boolean = false
+  @Output() changethestateback = new EventEmitter<boolean>();
   
-  // onSidebarVisibleChange(visible: boolean) {
-  //   // this.changethestateback.emit();
-  //   // You can perform any actions here based on the sidebar visibility change
-  //   console.log("Sidebar visibility changed:", visible);
-  // }
+  onSidebarVisibleChange(visible: boolean) {
+    if(visible==false){
+      this.changethestateback.emit();
+    }
+  }
 }
