@@ -11,7 +11,6 @@
     gap: 10px;
     align-items: center;
     padding-left: 1.4rem;
-    // margin-left: 30px;
 }
 .plus-icon {
     cursor: pointer;
@@ -31,18 +30,15 @@
      animation: fadeInOut 0.6s ease-in-out; 
      cursor: pointer;
 }
-.drop-down-box p:hover{
-  background-color: #5f6368;
-}
+
 .drop-down-box-clicked{
     display: flex; 
     flex-direction: column;
-    
     background-color: white;
     text-align: center;
      margin-right: 0px; 
      position: absolute; 
-     right: 45px; 
+     right: 85px; 
      top: 50px;
      box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
      border-radius: 5px;
@@ -67,6 +63,24 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.plus-icon{
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top:10px;
+    right: 120px;
+    // background-color: blue;
+}
+.half-width{
+    background-color: red;
+    flex: 1;
+    text-align: center;
 }
 .pi-bar-wrapper:hover{
     background-color:#E8E8E8;
@@ -99,5 +113,27 @@
     color: #5f6368;
 }
 
+@media only screen and (max-width: 600px) {
+    .profile{
+        display: none;
+    }
+    .plus-icon{
+        position: static;
 
+
+    }
+    .drop-down-menu{
+        margin-right: 30px;
+        margin-top: 10px;
+    }
+    .drop-down-box{
+        right: 18px;
+        top: 40px;
+    }
+    .ripple::before {
+        width: 140%;
+        height: 140%; /* Ensure the pseudo-element doesn't block clicks */
+    }
+
+  }
 

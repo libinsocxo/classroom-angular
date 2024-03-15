@@ -38,20 +38,22 @@
      <div style="display: flex">
 
         <div class="drop-down-menu" style="display: flex; flex-direction: column; position: relative;">
-            <div style="position: relative;">
+            <div style="position: relative;" class="add-icon-container">
 
               
-                <div class="plus-icon " (click)="toggleDropdown()" style="position: fixed; top: 10px; right: 120px;">
+                <div class="plus-icon ripple" id="plus-icon-responsive" (click)="handleClick($event)" (click)="toggleDropdown()" >
                     <a>
                         <p class="pi pi-plus" style="font-size: 1rem"></p>
                     </a>
                 </div>
-             
 
-    
                 <div class="drop-down-box"  [ngClass]="{'drop-down-box-clicked': dropdownOpen}">
-                    <p (click)="Joinclass()" >Join Class</p>
-                    <p (click)="Createclass()">Create Class</p>
+                        <div>
+                            <p (click)="Joinclass()" style="margin-right: 10px;">Join Class</p>
+                        </div>
+                        <div>
+                            <p (click)="Createclass()" style="margin-top: 25px;">Create Class</p>
+                        </div>
                 </div>
             </div>
 
@@ -63,10 +65,6 @@
 
      </div>
 
-        
-        
-
-    
     </div>      
 </body>
 </html>
