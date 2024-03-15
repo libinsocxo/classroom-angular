@@ -13,7 +13,7 @@
 
         <div class="classroom-home-left-icons" >
 
-            <div  class="pi-bar-wrapper ripple"  (click)="handleClick($event)" (click)="toggleSidebar()">
+            <div  class="pi-bar-wrapper ripple"  (click)="handleClick($event)" (click)="sidebarvisible = true">
                 <div>
                     <a>
                         <p class="pi pi-bars"  style="font-size: 1rem"></p>
@@ -72,9 +72,12 @@
     <!-- body -->
 
         <app-sidebar
-        [sidebarVisible]="sidebarVisible" (sidebarVisibleChange)="sidebarVisible = $event"
+        [sidebarVisible] = sidebarvisible
+   
         >
         </app-sidebar>
+
+ 
    
    
 

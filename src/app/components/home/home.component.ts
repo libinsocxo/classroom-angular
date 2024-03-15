@@ -17,8 +17,12 @@ import { SidebarComponent } from '../sidebar/sidebar.component';
   styleUrl: './home.component.scss'
 })
 export class HomeComponent {
-  sidebarVisible: boolean = false;
+
+
+  sidebarvisible: boolean = false;
+
   constructor(private router: Router) {}
+
   dropdownOpen = false;
 
 
@@ -53,12 +57,15 @@ Createclass(){
    this.router.navigate(['/CreateClass'])
 }
 
-toggleSidebar() {
-  this.sidebarVisible = !this.sidebarVisible;
-}
-// Opensidebar(){
-//   this.sidebarVisible = !this.sidebarVisible;
+// toggleSidebar() {
+//   this.sidebarvisible= true
 // }
+
+// recive an output from the child and making the sidebarvisable to be false
+// func(){
+
+// }
+
 
 
 
