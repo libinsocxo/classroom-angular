@@ -34,8 +34,22 @@ export class HomeComponent {
 
 }
 
+
+
 showsidebar(){
-  this.sidebarvisible=!this.sidebarvisible;
+
+  const screenWidth = window.innerWidth;
+  if(screenWidth<=600){
+    this.sidebarvisible=!this.sidebarvisible;
+  }else{
+    this.showsidebarweb();
+  }
+  
+}
+
+
+showsidebarweb(){
+  //adding the css property for displaying the sidebar for web
 }
 
 changestate(){
