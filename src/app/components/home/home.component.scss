@@ -143,7 +143,7 @@
   }
 
 .sidebar{
-    width: 78px;
+    width: 5.75rem; //18.75
     height: 100vh;
     position: fixed;
     top: 64px;
@@ -151,6 +151,7 @@
     flex-direction: column;
     background-color: white;
     z-index: 99;
+    border-right: .0625rem solid rgb(218, 220, 224);
     
 }
 .web-sidebar-icon-section{
