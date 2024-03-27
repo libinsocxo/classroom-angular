@@ -66,16 +66,24 @@ showsidebarweb(){
     sidebar?.classList.add("sidebar-opened")
     var homecontainer = document.getElementById("web-home-container")
     homecontainer?.classList.add("home-container-sidebaropen")
-    var firstsectionsidebar = document.querySelector("web-sidebar-icon-section-home-first-sec")
-    firstsectionsidebar?.classList.add("add_width_firstsection")
+    var firstsectionsidebar = document.querySelector(".web-sidebar-icon-section-home-first-sec")
+    firstsectionsidebar?.classList.add("web-sidebar-icon-section-home-first-sec-opened")
+    var sidebar_icon_text_expanded = document.querySelectorAll(".sidebar-icon-text")
+    sidebar_icon_text_expanded.forEach((ele)=>{
+      ele.classList.add("sidebar-icon-text-expanded")
+    })
     this.isOpened = true;
   }else{
     var sidebar = document.getElementById("web-sidebar");
     sidebar?.classList.remove("sidebar-opened")
     var homecontainer = document.getElementById("web-home-container")
     homecontainer?.classList.remove("home-container-sidebaropen")
-    var firstsectionsidebar = document.querySelector("web-sidebar-icon-section-home-first-sec")
-    firstsectionsidebar?.classList.remove("add_width_firstsection")
+    var firstsectionsidebar = document.querySelector(".web-sidebar-icon-section-home-first-sec")
+    firstsectionsidebar?.classList.remove("web-sidebar-icon-section-home-first-sec-opened")
+    var sidebar_icon_text_expanded = document.querySelectorAll(".sidebar-icon-text")
+    sidebar_icon_text_expanded.forEach((ele)=>{
+      ele.classList.remove("sidebar-icon-text-expanded")
+    })
     this.isOpened = false;
   }
 
