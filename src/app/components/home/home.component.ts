@@ -132,6 +132,22 @@ showenrolled(){
   }
 }
 
+onMouseleave(){
+  if(this.TeachingSection == true){
+    var teachingsection = document.querySelector(".Teaching-section")
+    teachingsection?.classList.remove("Teaching-section-show")
+    const teaching_icon = document.querySelector(".icon-teaching");
+    teaching_icon?.classList.remove("rotate-icon")
+    this.TeachingSection = false
+  }
+  if(this.EnrolledSection==true){
+    var enrolledsection = document.querySelector(".Enrolled-section")
+    enrolledsection?.classList.remove("Enrolled-section-show")
+    const enrolling_icon = document.querySelector(".enrolling-icon");
+    enrolling_icon?.classList.remove("rotate-icon")
+    this.EnrolledSection = false;
+  }
+}
 
 toggleDropdown() {
   this.dropdownOpen = !this.dropdownOpen;
