@@ -1,0 +1,55 @@
+.card-wrapper{
+    width: 18.75rem;
+    height: 18.375rem;
+    background-color: #fff;
+    border: .0625rem solid #dadce0;
+    border-radius: .5rem;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+}
+.card-header{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 15px;
+    padding-bottom: 50px;
+    background-image: url("https://www.gstatic.com/classroom/themes/img_learnlanguage.jpg");
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+}
+.card-header-content{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-left: 15px;
+}
+.z3vRcc-ZoZQ1 {
+    font-family: "Google Sans", Roboto, Arial, sans-serif;
+    font-size: 1.375rem;
+    font-weight: 400;
+    line-height: 1.75rem;
+   
+}
+.movert-icon{
+    margin-right: 15px;
+
+}
+.YVvGBb {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    display: block;
+}
+.card-footer{
+    display: flex;
+    border-top: .0625rem solid rgb(218, 220, 224);
+    line-height: 0;
+    justify-content: end;
+    align-items: center;
+    padding-right: 15px;
+    gap: 15px;
+    height: 60px;
+}
