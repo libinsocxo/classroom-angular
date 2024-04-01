@@ -6,6 +6,10 @@ import { SidebarComponent } from '../sidebar/sidebar.component';
 import { flatMap } from 'rxjs';
 import { AvatarModule } from 'primeng/avatar';
 import { AvatarGroupModule } from 'primeng/avatargroup';
+import { Card } from 'react-bootstrap';
+import { CardComponent } from '../../card/card.component';
+import { ClassroomService } from '../../services/classroom.service';
+import { Class } from '../../../types';
 
 
 @Component({
@@ -16,7 +20,8 @@ import { AvatarGroupModule } from 'primeng/avatargroup';
     FormsModule,
     SidebarComponent,
     AvatarModule,
-    AvatarGroupModule
+    AvatarGroupModule,
+    CardComponent
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
@@ -32,7 +37,9 @@ export class HomeComponent {
 
   EnrolledSection : boolean = false;
 
-  constructor(private router: Router) {}
+  classrooms:Class[]=[];
+
+  constructor(private router: Router,private classroomservices: ClassroomService) {}
 
   dropdownOpen = false;
 
@@ -44,8 +51,6 @@ export class HomeComponent {
     }, 400);
 
 }
-
-
 
 showsidebar(){
 
@@ -159,6 +164,19 @@ Joinclass(){
 
 Createclass(){
    this.router.navigate(['/CreateClass'])
+}
+
+getclassrooms(){
+  this.classroomservices.getMyClasses("").subscribe({
+    next:(data:Class)=>{
+       this.classrooms = data
+    }
+  })
+
+}
+
+ngOnInit(){
+  this.getclassrooms()
 }
 
 }

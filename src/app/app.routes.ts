@@ -7,7 +7,7 @@ import { CardComponent } from './card/card.component';
 export const routes: Routes = [
     {
         path:'',
-        component:CardComponent
+        component:HomeComponent
     },
     {
         path:'JoinClass',
