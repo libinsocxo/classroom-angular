@@ -9,7 +9,7 @@ import { AvatarGroupModule } from 'primeng/avatargroup';
 import { Card } from 'react-bootstrap';
 import { CardComponent } from '../../card/card.component';
 import { ClassroomService } from '../../services/classroom.service';
-import { Class } from '../../../types';
+
 
 
 @Component({
@@ -37,7 +37,13 @@ export class HomeComponent {
 
   EnrolledSection : boolean = false;
 
-  classrooms:Class[]=[];
+  classrooms = [];
+  
+  UserName = "";
+
+  UserProfile : any;
+
+
 
   constructor(private router: Router,private classroomservices: ClassroomService) {}
 
@@ -167,16 +173,26 @@ Createclass(){
 }
 
 getclassrooms(){
-  this.classroomservices.getMyClasses("").subscribe({
-    next:(data:Class)=>{
+  this.classroomservices.getMyClasses("http://localhost:5234/api/Students/GetMyClasses").subscribe({
+    next:(data)=>{
+     
        this.classrooms = data
+       console.log(this.classrooms);
     }
   })
 
 }
 
+
+
 ngOnInit(){
-  this.getclassrooms()
+  let authData = JSON.parse(sessionStorage.getItem("loggedInUser") || "");
+  this.UserName = authData.name
+  this.UserProfile = authData.picture
+  // this.UserProfile = user_profile.picture;
+  // this.UserProfile = "https://lh3.googleusercontent.com/a/ACg8ocJzVjiBg6guzbjPKaZqyq93iBP7ayw-BygM2dmW_7i_dYU=s96-c"
+  // this.getclassrooms()
+  // console.log(this.UserProfile.picture)
 }
 
 }

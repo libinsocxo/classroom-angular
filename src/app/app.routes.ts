@@ -3,10 +3,15 @@ import { HomeComponent } from './components/home/home.component';
 import { JoinclassComponent } from './components/joinclass/joinclass.component';
 import { CreateclassComponent } from './components/createclass/createclass.component';
 import { CardComponent } from './card/card.component';
+import { LoginOAuthComponent } from './login-oauth/login-oauth.component';
 
 export const routes: Routes = [
     {
         path:'',
+        component:LoginOAuthComponent
+     },
+    {
+        path:'home',
         component:HomeComponent
     },
     {

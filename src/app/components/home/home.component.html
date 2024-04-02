@@ -61,8 +61,11 @@
 
         </div>
 
-        <div class="profile" style="margin-top: 10px;margin-right: 30px;">
-         <p class="pi pi-user"></p>
+        <div class="profile" style="margin-top: 15px;margin-right: 30px;height: 35px;width: 35px;border-radius: 50%;">
+         <!-- <p class="pi pi-user"></p> -->
+         <img  [src]="UserProfile" alt="profile-photo" height="35px" width="35px" style="border-radius: 50%;"/>
+       
+      
         </div>
 
      </div>
@@ -173,12 +176,11 @@
 
         <div class="home-container" id="web-home-container">
             <!-- child element card -->
-            <div class="home-card-wrapper">
-                <app-card
-                
-                >
-
-                </app-card>
+            <div class="home-card-wrapper" *ngFor="let classroom of classrooms">
+              <app-card
+              [classroom]="classroom"
+              >
+              </app-card>
             </div>
 
         </div>

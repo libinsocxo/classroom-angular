@@ -38,7 +38,7 @@ export interface PaginationParams {
     perPage: number;
   }
 
-export interface Class{
+export interface Classroom{
     id?:JSON,
     className?:string,
     description?:string,
