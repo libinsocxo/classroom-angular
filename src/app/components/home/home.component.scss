@@ -446,3 +446,40 @@
     line-height: 1.25rem;
     color: #3c4043;
 }
+
+.user-profile-container{
+    position: absolute;
+    z-index: 1;
+    top: 66px;
+    width: 100%;
+    display: flex;
+    justify-content: end;
+    height: auto;
+}
+.user-profile-section{
+    background-color: #e9eef6;width: 436px;margin-right: 25px;height: auto;border-radius: 28px;border: none;
+    box-shadow: 0 4px 8px 3px rgba(0,0,0,.15), 0 1px 3px rgba(0,0,0,.3);display: none;
+}
+.user-profile-section-open{
+    background-color: #e9eef6;width: 436px;margin-right: 25px;height: auto;border-radius: 28px;border: none;
+    box-shadow: 0 4px 8px 3px rgba(0,0,0,.15), 0 1px 3px rgba(0,0,0,.3);display: block;
+}
+
+.user-profile-section-mail{
+    font-family: "Google Sans", "Roboto";
+    font-size: .875rem;
+    line-height: 1.25rem;
+    letter-spacing: normal;
+    color: #1f1f1f;
+    font-weight: 500;
+}
+
+.hCDve{
+    font-family: "Google Sans", "Roboto";
+    font-weight: 400;
+    font-size: 1.375rem;
+    line-height: 1.75rem;
+    letter-spacing: normal;
+    margin: 8px 0;
+    text-align: center;
+}

@@ -1,14 +1,15 @@
 import { CommonModule } from '@angular/common';
 import { Component, HostListener, Input, Renderer2, booleanAttribute } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { Router } from '@angular/router';
+import { NavigationEnd, Router } from '@angular/router';
 import { SidebarComponent } from '../sidebar/sidebar.component';
-import { flatMap } from 'rxjs';
+import { filter, flatMap, windowWhen } from 'rxjs';
 import { AvatarModule } from 'primeng/avatar';
 import { AvatarGroupModule } from 'primeng/avatargroup';
 import { Card } from 'react-bootstrap';
 import { CardComponent } from '../../card/card.component';
 import { ClassroomService } from '../../services/classroom.service';
+declare var handleSignout:any;
 
 
 
@@ -40,6 +41,10 @@ export class HomeComponent {
   classrooms = [];
   
   UserName = "";
+
+  UsergivenName = "";
+
+  UserEmail  = "";
 
   UserProfile : any;
 
@@ -183,12 +188,32 @@ getclassrooms(){
 
 }
 
+handlesignout(){
+  handleSignout();
+  sessionStorage.removeItem("loggedInUser");
+  this.router.navigate([""]).then(()=>{
+    window.location.reload();
+  })
+}
+
+profile_section_open(){
+  var profile_section = document.querySelector(".user-profile-section");
+  profile_section?.classList.add("user-profile-section-open");
+}
+
+close_profile_section(){
+  var profile_section = document.querySelector(".user-profile-section");
+  profile_section?.classList.remove("user-profile-section-open")
+}
+
 
 
 ngOnInit(){
   let authData = JSON.parse(sessionStorage.getItem("loggedInUser") || "");
   this.UserName = authData.name
   this.UserProfile = authData.picture
+  this.UsergivenName = authData.given_name
+  this.UserEmail = authData.email
   // this.UserProfile = user_profile.picture;
   // this.UserProfile = "https://lh3.googleusercontent.com/a/ACg8ocJzVjiBg6guzbjPKaZqyq93iBP7ayw-BygM2dmW_7i_dYU=s96-c"
   // this.getclassrooms()
