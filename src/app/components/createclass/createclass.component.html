@@ -1,1 +1,24 @@
-<p>createclass works!</p>
+
+<p-dialog header="Header" [visible]="dialogVisible" (visibleChange)="onSidebarVisibleChange($event)"  [modal]="true" [style]="{ width: '50rem' }" [breakpoints]="{ '1199px': '75vw', '575px': '90vw' }">
+        <ng-template pTemplate="header">
+            <div class="inline-flex align-items-center justify-content-center gap-2">
+                <span class="create-class-title">Create class</span>
+            </div>
+        </ng-template>
+        
+
+          <form [formGroup]="createClassform">
+            <div class="text-fields">
+                <input type="text" placeholder="Class name (required)" class="shadow" formControlName="ClassName">
+                <input type="text" placeholder="Description (required)" class="shadow" formControlName="Description">
+                <input type="text" placeholder="Subject" class="shadow" formControlName="Subject">
+                <input type="text" placeholder="Room" class="shadow">
+            </div>
+          </form>
+
+        
+        <ng-template pTemplate="footer">
+            <p-button  [text]="true" label="Cancel" severity="secondary" (click)="canceldialogbox()"></p-button>
+            <p-button  [text]="true" label="Create" [disabled]="false" (click)="Createclass()"></p-button>
+        </ng-template>
+</p-dialog>

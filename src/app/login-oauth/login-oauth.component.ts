@@ -9,13 +9,14 @@ import { Router } from '@angular/router';
   styleUrl: './login-oauth.component.scss'
 })
 export class LoginOAuthComponent {
+  private tokenCheckInterval: any;
   constructor(private router: Router) {
     // Start checking for the token value periodically
     this.startTokenCheck();
   }
 
   startTokenCheck(): void {
-    setInterval(() => {
+    this.tokenCheckInterval = setInterval(() => {
       this.checkAndRedirect();
     }, 1000); // Adjust the interval as needed
   }
@@ -23,6 +24,7 @@ export class LoginOAuthComponent {
   checkAndRedirect(): void {
     const specificValue = sessionStorage.getItem('loggedInUser');
     if (specificValue) {
+      clearInterval(this.tokenCheckInterval);
       this.router.navigate(['/home']); 
     }
   }

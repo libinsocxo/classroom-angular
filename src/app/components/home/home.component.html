@@ -74,9 +74,6 @@
     </div>   
 
 
-    
-
-  
         <div class="sidebar" id="web-sidebar" (mouseleave)="onMouseleave()">
         <div class="web-sidebar-icon-section-home-first-sec">
             <div>
@@ -228,14 +225,24 @@
 
     <!-- header ends -->
 
-   
+        
   
-
+    <!-- mobile sidebar component -->
         <app-sidebar
         [sidebarVisible] = sidebarvisible
         (changethestateback)="changestate()"
         >
         </app-sidebar>
+    <!-- ends -->
+
+    <!-- dialog box for creating room -->
+      <app-createclass
+      [dialogVisible] = dialogVisible
+      (closedialogbox)="closedialogbox()"
+      >
+      
+      </app-createclass>
+    
 
         
         

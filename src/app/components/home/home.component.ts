@@ -9,6 +9,7 @@ import { AvatarGroupModule } from 'primeng/avatargroup';
 import { Card } from 'react-bootstrap';
 import { CardComponent } from '../../card/card.component';
 import { ClassroomService } from '../../services/classroom.service';
+import { CreateclassComponent } from '../createclass/createclass.component';
 declare var handleSignout:any;
 
 
@@ -22,7 +23,8 @@ declare var handleSignout:any;
     SidebarComponent,
     AvatarModule,
     AvatarGroupModule,
-    CardComponent
+    CardComponent,
+    CreateclassComponent
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
@@ -31,6 +33,8 @@ export class HomeComponent {
 
 
   sidebarvisible: boolean = false;
+
+  dialogVisible: boolean = false;
 
   isOpened : boolean = false;
 
@@ -45,6 +49,8 @@ export class HomeComponent {
   UsergivenName = "";
 
   UserEmail  = "";
+
+  UserId =  "";
 
   UserProfile : any;
 
@@ -112,6 +118,10 @@ changestate(){
   this.sidebarvisible = false;
 }
 
+closedialogbox(){
+  this.dialogVisible = false;
+}
+
 showteachings(){
 
   if(this.TeachingSection==false){
@@ -174,11 +184,15 @@ Joinclass(){
 }
 
 Createclass(){
-   this.router.navigate(['/CreateClass'])
+  this.dropdownOpen = !this.dropdownOpen
+   this.dialogVisible = !this.dialogVisible;
 }
 
 getclassrooms(){
-  this.classroomservices.getMyClasses("http://localhost:5234/api/Students/GetMyClasses").subscribe({
+  const requestBody= {
+    "oAuthUserId": this.UserId
+  }
+  this.classroomservices.getMyClasses("http://localhost:5234/api/Students/GetMyClassesOAuth",requestBody).subscribe({
     next:(data)=>{
      
        this.classrooms = data
@@ -214,6 +228,8 @@ ngOnInit(){
   this.UserProfile = authData.picture
   this.UsergivenName = authData.given_name
   this.UserEmail = authData.email
+  this.UserId = authData.sub
+  this.getclassrooms()
   // this.UserProfile = user_profile.picture;
   // this.UserProfile = "https://lh3.googleusercontent.com/a/ACg8ocJzVjiBg6guzbjPKaZqyq93iBP7ayw-BygM2dmW_7i_dYU=s96-c"
   // this.getclassrooms()
