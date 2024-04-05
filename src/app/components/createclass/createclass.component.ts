@@ -4,6 +4,7 @@ import { DialogModule } from 'primeng/dialog';
 import { ButtonModule } from 'primeng/button';
 import { BrowserModule } from '@angular/platform-browser';
 import { ClassroomService } from '../../services/classroom.service';
+import { HomeComponent } from '../home/home.component';
 
 
 @Component({
@@ -16,16 +17,18 @@ import { ClassroomService } from '../../services/classroom.service';
 export class CreateclassComponent {
   
   createClassform:FormGroup;
+ 
   
-  constructor(private classroomservices: ClassroomService){
+  constructor(private classroomservices: ClassroomService,private homeapi:HomeComponent){
 
-    const authUserId = sessionStorage.getItem('authUserId');
+    let authData = JSON.parse(sessionStorage.getItem("loggedInUser") || "");
 
     this.createClassform = new FormGroup({
       ClassName: new FormControl(),
       Description: new FormControl(),
       Subject: new FormControl(),
-      OAuthUser:new FormControl(authUserId)
+      Students: new FormControl([]),
+      OAuthUser:new FormControl(authData.sub)
     })
   }
 
@@ -57,18 +60,20 @@ export class CreateclassComponent {
 
   Createclass(){
     const formData = this.createClassform.value;
-    console.log(formData);
- 
+
     this.classroomservices.CreateClassroom("http://localhost:5234/api/Room/CreateRoomOAuth",formData).subscribe({
       next:(data)=>{
-        console.log(data);
+        this.homeapi.getclassrooms();
+        this.dialogVisible = false;
+     },
+     error:(error)=>{
+      alert("Something went wrong!");
+      console.error("classroom creating error occured while creating the room",error)
      }
     })
 
   }
 
-//   showDialog() {
-//     this.visible = true;
-// }
+
 
 }

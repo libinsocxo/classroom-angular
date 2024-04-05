@@ -4,14 +4,15 @@
             <ng-template pTemplate="header">
             <a>
                 <div class="sidebar-header-profile">
-                    <p-avatar label="L" styleClass="mr-2" 
-                     [style]="{ 'background-color': '#2196F3', color: '#ffffff' }" shape="circle"></p-avatar>
+                    <img [src]="UserProfile" alt="" style="height: 30px;width: 30px;border-radius: 50px;">
+                    <!-- <p-avatar label="L" styleClass="mr-2" 
+                     [style]="{ 'background-color': '#2196F3', color: '#ffffff' }" shape="circle"></p-avatar> -->
                     <div class="sidebar-header-text">
                         <div class="asQXV YVvGBb">
-                            Libin Luvis
+                            {{UserName}}
                         </div>
                         <div class="dDKhVc YVvGBb">
-                            libinluvis10&#64;gmail.com
+                            {{USerEmail}}
                         </div>
                     </div>
                 </div>

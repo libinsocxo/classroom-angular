@@ -29,5 +29,11 @@ export class ClassroomService {
     });
   }
 
+  JoinClassroom = (url:string,body:any):Observable<any>=>{
+    return this.apiService.post(url,body,{
+      responseType:'json'
+    })
+  }
+
 
 }

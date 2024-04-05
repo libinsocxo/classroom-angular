@@ -17,10 +17,23 @@ export class SidebarComponent {
  
   @Input() sidebarVisible:boolean = false
   @Output() changethestateback = new EventEmitter<boolean>();
+
+  UserName : string = "";
+
+  USerEmail : string ="";
+
+  UserProfile : any;
   
   onSidebarVisibleChange(visible: boolean) {
     if(visible==false){
       this.changethestateback.emit();
     }
+  }
+
+  ngOnInit(){
+    let authData = JSON.parse(sessionStorage.getItem("loggedInUser") || "");
+    this.UserName = authData.name;
+    this.USerEmail = authData.email;
+    this.UserProfile = authData.picture;
   }
 }
