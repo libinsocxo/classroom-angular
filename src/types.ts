@@ -46,5 +46,6 @@ export interface Classroom{
     subject?:string,
     classCode?:string,
     students?:[],
-    author?:JSON
+    author?:JSON,
+    oAuthUser?:string
 }

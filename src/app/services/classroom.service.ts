@@ -35,5 +35,17 @@ export class ClassroomService {
     })
   }
 
+  Unenrolclass = (url:string,body:any):Observable<any>=>{
+   return this.apiService.post(url,body,{
+    responseType:"json"
+   })
+  }
+
+  Removeclassroom = (url:string,body:any):Observable<any>=>{
+    return this.apiService.post(url,body,{
+      responseType:"json"
+    })
+  }
+
 
 }
