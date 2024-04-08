@@ -38,8 +38,16 @@ export interface PaginationParams {
     perPage: number;
   }
 
+
+
 export interface Classroom{
-    id?:JSON,
+    id?:{
+      creationTime: "2024-04-01T05:03:01Z",
+      increment: 8697694,
+      machine: 14229120,
+      pid: -17450,
+      timestamp: 0
+    },
     className?:string,
     description?:string,
     section?:string,

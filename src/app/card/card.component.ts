@@ -3,6 +3,7 @@ import { Classroom } from '../../types';
 import { CommonModule } from '@angular/common';
 import { HomeComponent } from '../components/home/home.component';
 import { ClassroomService } from '../services/classroom.service';
+import  ObjectId  from 'bson-objectid';
 
 @Component({
   selector: 'app-card',
@@ -15,10 +16,13 @@ export class CardComponent {
 
 constructor(private classroomservice:ClassroomService,private homeapi:HomeComponent){}
 @Input() classroom!:Classroom;
+@Input() BackgroundImage!:string;
 
 isDropdownOpen: boolean = false;
 isAuther : boolean = false
 Username : string = ""
+
+classroomid : string = "";
 
 logedInUser: string = ""
 

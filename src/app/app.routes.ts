@@ -4,6 +4,7 @@ import { JoinclassComponent } from './components/joinclass/joinclass.component';
 import { CreateclassComponent } from './components/createclass/createclass.component';
 import { CardComponent } from './card/card.component';
 import { LoginOAuthComponent } from './login-oauth/login-oauth.component';
+import { RoomComponent } from './room/room.component';
 
 export const routes: Routes = [
     {
@@ -21,5 +22,9 @@ export const routes: Routes = [
     {
         path:'CreateClass',
         component:CreateclassComponent
+    },
+    {
+        path:'class/:id',
+        component:RoomComponent
     }
 ];
