@@ -5,6 +5,9 @@ import { CreateclassComponent } from './components/createclass/createclass.compo
 import { CardComponent } from './card/card.component';
 import { LoginOAuthComponent } from './login-oauth/login-oauth.component';
 import { RoomComponent } from './room/room.component';
+import { StreamComponent } from './stream/stream.component';
+import { ClassworkComponent } from './classwork/classwork.component';
+import { PeopleComponent } from './people/people.component';
 
 export const routes: Routes = [
     {
@@ -24,7 +27,32 @@ export const routes: Routes = [
         component:CreateclassComponent
     },
     {
-        path:'class/:id',
-        component:RoomComponent
-    }
+        path:'class/:id/:string',
+        component:RoomComponent,children:[
+            {
+              path:'stream',
+              component:StreamComponent
+            },
+            {
+              path:'classwork',
+              component:ClassworkComponent
+            },
+            {
+              path:'people',
+              component:PeopleComponent
+            }
+        ]
+    },
+    // {
+    //     path:'class/:id/stream',
+    //     component:StreamComponent
+    // },
+    // {
+    //     path:'class/:id/classwork',
+    //     component:ClassworkComponent
+    // },
+    // {
+    //     path:'class/:id/people',
+    //     component:PeopleComponent
+    // }
 ];

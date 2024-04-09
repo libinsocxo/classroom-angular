@@ -57,20 +57,20 @@
     <!-- sub header starts -->
     <div class="sub-header" >
      
-     <div class="wZTANe">
-     <a class="u2mfde hN1OOc EZrbnd GblU6b eumXzf VnOHwf-Tvm9db P3W0Dd-Ysl7Fe UISY8d-Ysl7Fe S6Vdac" >
+     <div class="wZTANe" (click)="navigatetostream()" >
+     <a class="hN1OOc " [class.eumXzf]="activeLink === 'stream' ">
       Stream
      </a>
      </div>
 
-     <div class="wZTANe">
-        <a class="u2mfde hN1OOc EZrbnd GblU6b eumXzf VnOHwf-Tvm9db P3W0Dd-Ysl7Fe UISY8d-Ysl7Fe S6Vdac">
+     <div class="wZTANe" (click)="navigatetoclasswork()">
+        <a class="hN1OOc "  [class.eumXzf]="activeLink === 'classwork'">
          Classwork
         </a>
     </div>
 
-    <div class="wZTANe">
-            <a class="u2mfde hN1OOc EZrbnd GblU6b eumXzf VnOHwf-Tvm9db P3W0Dd-Ysl7Fe UISY8d-Ysl7Fe S6Vdac">
+    <div class="wZTANe" (click)="navigatetopeople()">
+            <a class="hN1OOc"  [class.eumXzf]="activeLink === 'people'">
              People
             </a>
     </div>
@@ -82,25 +82,17 @@
     <!-- classroom content starts -->
     <div class="home-container" id="web-home-container">
    
-
+        <div class="showstream-container">
+          <app-stream *ngIf="showstream">Stream</app-stream>
+        </div>
         <!-- child element card -->
-
-        <!-- <div style="height: 200px;width: 200px;background-color: blue;">
-         
+        <div>
+            <app-classwork *ngIf="showclasswork">classwork</app-classwork>
         </div>
-
-        <div style="height: 200px;width: 200px;background-color: blue;">
-         
+        <div>
+            <app-people *ngIf="showpeople">People</app-people>
         </div>
-
-        <div style="height: 200px;width: 200px;background-color: blue;">
-         
-        </div>
-
-        <div style="height: 200px;width: 200px;background-color: blue;">
-         
-        </div> -->
-   
+        
 
     </div>
     <!-- classroom content ends -->

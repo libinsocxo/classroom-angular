@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { HomeComponent } from '../components/home/home.component';
 import { ClassroomService } from '../services/classroom.service';
 import  ObjectId  from 'bson-objectid';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-card',
@@ -14,7 +15,7 @@ import  ObjectId  from 'bson-objectid';
 })
 export class CardComponent {
 
-constructor(private classroomservice:ClassroomService,private homeapi:HomeComponent){}
+constructor(private classroomservice:ClassroomService,private homeapi:HomeComponent,private router:Router){}
 @Input() classroom!:Classroom;
 @Input() BackgroundImage!:string;
 
@@ -61,6 +62,11 @@ Removeclassroom(){
       alert("Error occured while removing the class")
     }
   })
+}
+
+Gotoclassroom(){
+ console.log(this.classroom.id)
+ this.router.navigate([`class/${this.classroom.id}/stream`])
 }
 
 ngOnInit(){
