@@ -25,6 +25,7 @@
 }
 .side-box{
     width: 12.125rem;
+    height: 170px;
     background-color: white;
     border: 0.0625rem solid #dadce0;
     border-radius: 0.5rem;
@@ -61,6 +62,7 @@
 
 .classroom-stream-box{
     width: 775px;
+    margin-bottom: 20px;
     height: 80px;
     display: flex;
     align-items: center;
@@ -68,6 +70,7 @@
     border: .0625rem solid #dadce0;
     border-radius: .5rem;
     overflow: hidden;
+   
 }
 .stream-icon{
     margin-left: 20px;
@@ -78,11 +81,13 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
 }
 .stream-details{
     margin-left: 20px;
     display: flex;
     flex-direction: column;
+    cursor: pointer;
     gap: 5px;
 }
 
