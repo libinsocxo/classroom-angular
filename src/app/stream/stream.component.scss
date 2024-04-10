@@ -1,13 +1,12 @@
 .stream-wrapper{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    // height: 100vh;
-    // background-color: blue;
+   display: flex;
+   flex-direction: column;
+//    align-items: center;
 }
 .stream-banner{
-    width: 1000px;
+
     height: 15rem;
+    width: 1000px;
     border-radius: 10px;
     background-repeat: no-repeat;
     background-size: cover;
@@ -19,4 +18,98 @@
     font-weight: 500;
     line-height: 2.75rem;
     color: #fff;
+}
+.stream-content{
+    display: flex;
+    margin-top: 1.5rem;
+}
+.side-box{
+    width: 12.125rem;
+    background-color: white;
+    border: 0.0625rem solid #dadce0;
+    border-radius: 0.5rem;
+    margin-right: 1.5rem;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.EZrbnd {
+    letter-spacing: .01785714em;
+    font-family: "Google Sans", Roboto, Arial, sans-serif;
+    font-size: .875rem;
+    font-weight: 500;
+    line-height: 1.25rem;
+    color: #3c4043;
+    text-transform: none;
+}
+.sxa9Pc {
+    padding-bottom: 1rem;
+}
+
+.side-box-btn{
+    color:  rgb(19, 115, 51);
+    font-family: "Google Sans", Roboto, Arial, sans-serif;
+    font-size: .875rem;
+    letter-spacing: .0107142857em;
+    text-align: end;
+    font-weight: 500;
+    text-transform: none;
+    margin-top: 10px;
+}
+
+.classroom-stream-box{
+    width: 775px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    border: .0625rem solid #dadce0;
+    border-radius: .5rem;
+    overflow: hidden;
+}
+.stream-icon{
+    margin-left: 20px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50px;
+    background-color: rgb(30, 142, 62);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.stream-details{
+    margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.asQXV {
+    letter-spacing: .01785714em;
+    font-family: "Google Sans", Roboto, Arial, sans-serif;
+    font-size: .875rem;
+    font-weight: 500;
+    line-height: 1.25rem;
+    color: #3c4043;
+}
+
+.YVvGBb {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    display: block;
+}
+
+.PazDv {
+    letter-spacing: .025em;
+    font-family: Roboto, Arial, sans-serif;
+    font-weight: 400;
+    font-size: .75rem;
+    line-height: 1rem;
+    color: #5f6368;
+}
+.stream-movert-icon{
+    margin-left: 80px;
 }

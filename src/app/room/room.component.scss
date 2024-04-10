@@ -544,11 +544,11 @@
     min-height: calc(100vh - 70px);
     padding-top: 0.5px;
     display: flex;
-    flex-wrap: wrap;
-    align-content: flex-start;
+    // flex-wrap: wrap;
+    // align-content: flex-start;
     width: 100%;
-    padding-left: 115px;
-    padding-top: 15px;
+    // padding-left: 115px;
+    // padding-top: 15px;
    
 }
 
@@ -606,16 +606,10 @@
 
 .showstream-container{
     padding-top: 50px;
-    // height: 100vh;
+    height: 100vh;
     width: 100%;
-    padding-left: 0;
-    padding-right: 0;
     display: flex;
     justify-content: center;
-
-
-    
-
 }
 
 
