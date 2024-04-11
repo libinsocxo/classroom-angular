@@ -6,6 +6,8 @@ import { ClassworkComponent } from '../classwork/classwork.component';
 import { PeopleComponent } from '../people/people.component';
 import { CommonModule } from '@angular/common';
 import { StreamComponent } from '../stream/stream.component';
+import { ClassroomService } from '../services/classroom.service';
+import {  Classroom } from '../../types';
 
 @Component({
   selector: 'app-room',
@@ -22,9 +24,12 @@ import { StreamComponent } from '../stream/stream.component';
   styleUrl: './room.component.scss'
 })
 export class RoomComponent {
-  constructor(private router:Router,private route:ActivatedRoute){}
+  constructor(private router:Router,private route:ActivatedRoute,private classroomservice:ClassroomService){}
   currentclassid = 0;
   activeLink: string | null = null;
+  // classdetails: Classroom[]=[];
+  className = "";
+  UserProfile = "";
   navigatetoclasswork(){
     this.router.navigate([`class/${this.currentclassid}/classwork`])
     this.activeLink = 'classwork'
@@ -46,6 +51,19 @@ export class RoomComponent {
       this.currentclassid = roomid;
       this.showComponentBasedOnPath(section);
     })
+
+    this.classroomservice.GetClassdetails(`http://localhost:5234/api/Room/GetClassDetailsOAuth/${this.currentclassid}`).subscribe({
+      next:(data)=>{
+        this.className = data.className;
+      },
+      error:(err)=>{
+        alert("something went wrong while getting the class details!")
+      }
+    })
+
+    let authData = JSON.parse(sessionStorage.getItem("loggedInUser") || "");
+    this.UserProfile = authData.picture;
+    
   }
 
   showComponentBasedOnPath(path: string) {
@@ -73,4 +91,5 @@ export class RoomComponent {
   showclasswork: boolean = false;
   showpeople: boolean = false;
   showstream : boolean = true;
+
 }

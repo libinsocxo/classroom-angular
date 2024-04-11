@@ -4,7 +4,6 @@
 //    align-items: center;
 }
 .stream-banner{
-
     height: 15rem;
     width: 1000px;
     border-radius: 10px;
@@ -63,7 +62,7 @@
 .classroom-stream-box{
     width: 775px;
     margin-bottom: 20px;
-    height: 80px;
+    height: 72px;
     display: flex;
     align-items: center;
     background-color: #fff;
@@ -85,10 +84,12 @@
 }
 .stream-details{
     margin-left: 20px;
+    width: 500px;
     display: flex;
     flex-direction: column;
     cursor: pointer;
     gap: 5px;
+    overflow-x: hidden;
 }
 
 .asQXV {
@@ -116,5 +117,54 @@
     color: #5f6368;
 }
 .stream-movert-icon{
-    margin-left: 80px;
+  
+    margin-left: 130px; 
 }
+
+@media only screen and (max-width:1130px){
+    .stream-banner{
+        width: 900px;
+    }
+    .classroom-stream-box{
+        width: 600px;
+    }
+    .stream-icon{
+        width: 50px;
+    }
+
+  
+}
+
+@media only screen and (max-width:500px){
+ 
+  .stream-banner{
+    width: 400px;
+  }
+  .YrFhrf-ZoZQ1{
+    font-family: "Google Sans", Roboto, Arial, sans-serif;
+    font-size: 1.75rem;
+    font-weight: 500;
+    line-height: 2.25rem;
+  }
+  .side-box{
+    display: none;
+  }
+  .classroom-stream-box{
+    width: 400px;
+  }
+  .stream-movert-icon{
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+  .stream-icon{
+    width: 65px;
+    height: 35px;
+  }
+  
+}
+
+// @media only screen and (max-width: 600px) {
+//     .home-container{
+//         padding-left: 30px;
+//     }
+// }

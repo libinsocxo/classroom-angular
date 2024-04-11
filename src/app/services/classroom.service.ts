@@ -47,5 +47,11 @@ export class ClassroomService {
     })
   }
 
+  GetClassdetails = (url:string):Observable<any>=>{
+    return this.apiService.get(url,{
+      responseType:'json'
+    })
+  }
+
 
 }

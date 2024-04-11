@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+
 
 @Component({
   selector: 'app-stream',
@@ -8,5 +9,5 @@ import { Component } from '@angular/core';
   styleUrl: './stream.component.scss'
 })
 export class StreamComponent {
-
+  @Input() classname!:string;
 }
