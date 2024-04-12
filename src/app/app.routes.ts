@@ -8,6 +8,7 @@ import { RoomComponent } from './room/room.component';
 import { StreamComponent } from './stream/stream.component';
 import { ClassworkComponent } from './classwork/classwork.component';
 import { PeopleComponent } from './people/people.component';
+import { StreamdetailsComponent } from './streamdetails/streamdetails.component';
 
 export const routes: Routes = [
     {
@@ -43,16 +44,10 @@ export const routes: Routes = [
             }
         ]
     },
-    // {
-    //     path:'class/:id/stream',
-    //     component:StreamComponent
-    // },
-    // {
-    //     path:'class/:id/classwork',
-    //     component:ClassworkComponent
-    // },
-    // {
-    //     path:'class/:id/people',
-    //     component:PeopleComponent
-    // }
+    {
+        path:'class/:id/stream/:id',
+        component:StreamdetailsComponent
+    }
+
+
 ];

@@ -52,3 +52,14 @@ export interface Classroom{
     oAuthUser?:string
 }
 
+export interface classroomstream{
+  id?:string,
+  for?: [],
+  classId?: string,
+  announcement?: string,
+  title?: string,
+  description?: string,
+  createdDate?: string,
+  attachments?: string
+}
+
