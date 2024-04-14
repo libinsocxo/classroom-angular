@@ -292,6 +292,8 @@
     display: none;
 }
 
+
+
 // .web-sidebar-icon-section-Teaching-second-sec:hover + .Teaching-section{
 //    display: block;
 // }
@@ -398,14 +400,30 @@
     min-height: calc(100vh - 70px);
     padding-top: 0.5px;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
     flex-wrap: wrap;
-    align-content: flex-start;
+    // align-content: flex-start;
     width: 100%;
     padding-left: 115px;
     padding-top: 15px;
     
    
+}
+
+.tLDEHd {
+    letter-spacing: .01428571em;
+    font-family: Roboto, Arial, sans-serif;
+    font-size: .875rem;
+    font-weight: 400;
+    line-height: 1.25rem;
+    color: #3c4043;
+}
+
+.nGi02b {
+    margin-bottom: 1rem;
+    overflow: hidden;
+    word-wrap: break-word;
 }
 
 .first-section-header{
@@ -429,6 +447,11 @@
     flex-direction: column;
     overflow: hidden;
     margin-right: auto;
+}
+.stream-details-title-box{
+    width: 600px;height:60px;
+    display: flex;align-items: center;
+    overflow: hidden;
 }
 
 .WFUiUb .VnOHwf-Tvm9db {
@@ -474,7 +497,7 @@
 }
 
 hr.solid{
-    border-top: 3px solid #bbb;
+    border-top: 1.5px solid #bbb;
     width: 800px;
     margin-top: 20px;
 }
@@ -494,6 +517,45 @@ hr.solid{
     margin-right: 10px;
 }
 
+.centered-hr{
+    position: absolute;
+    display: none;
+    top:110px;
+    left: 25px;
+    right: 25px;
+    border: none;
+    border-top: 1px solid black;
+}
+// .mobile-divider{
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     // background-color: red;
+// }
+// .mob-divider{
+//     border-top: 1.5px solid #bbb;
+//     width: 300px;
+// }
+.A6dC2c {
+    letter-spacing: .00625em;
+    font-family: "Google Sans", Roboto, Arial, sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1.5rem;
+    color: #3c4043;
+    overflow: hidden;
+    margin-top: 10px;
+    margin-right: 10px;
+}
+.stream-description-content{
+
+    margin-right: 240px;
+ }
+.blobs-view{
+    margin-right: 510px;
+    cursor: pointer;
+}
+
 @media only screen and (max-width:500px){
     .stream-icon{
         display: none;
@@ -504,7 +566,24 @@ hr.solid{
     .solid{
         display: none;
     }
+    .stream-details-title-box{
+        width: 290px;
+    }
+    .centered-hr{
+        display: block;
+    }
+    .stream-description-content{
+        margin-right: 0px;
+        margin-top: 28px;
+
+    }
+    .blobs-view{
+        margin-right: 0px;
+    }
+ 
 }
+
+
 
 .home-container-sidebaropen{
     position: relative;

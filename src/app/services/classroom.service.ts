@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { ApiService } from './api.service';
 import { PaginationProps } from 'react-bootstrap';
 import { Classroom, PaginationParams } from '../../types';
-import { Observable } from 'rxjs';
+import { Observable, ObservableLike } from 'rxjs';
 import { HttpHeaders, HttpParams } from '@angular/common/http';
 
 @Injectable({
@@ -55,6 +55,12 @@ export class ClassroomService {
 
   GetRoomStreams = (url:string,body:any):Observable<any>=>{
     return this.apiService.post(url,body,{
+      responseType:'json'
+    })
+  }
+
+  GetStreamdetails = (url:string):Observable<any>=>{
+    return this.apiService.get(url,{
       responseType:'json'
     })
   }
