@@ -81,6 +81,8 @@ export class StreamdetailsComponent {
   }
 
   openpdf(){
+    console.log("heyy")
+    console.log(this.streamdetail)
     const base64  = this.streamdetail.attachments;
     if(base64){
       const byteArray = new Uint8Array(
