@@ -28,7 +28,11 @@ export class CreateclassComponent {
       Description: new FormControl(),
       Subject: new FormControl(),
       Students: new FormControl([]),
-      OAuthUser:new FormControl(authData.sub)
+      Author:new FormControl({
+        "AuthorName":authData.name,
+        "AuthorID":authData.sub,
+        "AuthorProfile":authData.picture
+      })
     })
   }
 
@@ -60,6 +64,8 @@ export class CreateclassComponent {
 
   Createclass(){
     const formData = this.createClassform.value;
+
+    console.log(formData);
 
     this.classroomservices.CreateClassroom("http://localhost:5234/api/Room/CreateRoomOAuth",formData).subscribe({
       next:(data)=>{

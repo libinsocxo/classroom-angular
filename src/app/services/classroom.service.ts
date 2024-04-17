@@ -65,5 +65,11 @@ export class ClassroomService {
     })
   }
 
+  Getpeoples = (url:string):Observable<any>=>{
+    return this.apiService.get(url,{
+      responseType:'json'
+    })
+  }
+
 
 }

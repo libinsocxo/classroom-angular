@@ -63,3 +63,16 @@ export interface classroomstream{
   attachments?: string
 }
 
+export interface classroompeople{
+  author:{
+    "authorID":"",
+    "authorName":"",
+    "authorProfile":""
+  },
+  students:[{
+    "userProfile":"",
+    "userID":"",
+    "username":""
+  }]
+}
+

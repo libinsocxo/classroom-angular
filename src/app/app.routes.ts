@@ -9,6 +9,7 @@ import { StreamComponent } from './stream/stream.component';
 import { ClassworkComponent } from './classwork/classwork.component';
 import { PeopleComponent } from './people/people.component';
 import { StreamdetailsComponent } from './streamdetails/streamdetails.component';
+import { MaterialUploadComponent } from './material-upload/material-upload.component';
 
 export const routes: Routes = [
     {
@@ -47,6 +48,10 @@ export const routes: Routes = [
     {
         path:'class/:id/stream/:id',
         component:StreamdetailsComponent
+    },
+    {
+        path:'uploadmaterial/:id',
+        component:MaterialUploadComponent
     }
 
 

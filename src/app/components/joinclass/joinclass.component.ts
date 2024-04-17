@@ -44,7 +44,11 @@ export class JoinclassComponent {
     console.log(this.value);
     const payload = {
       "ClassCode":this.value,
-      "OAuthUserId":this.UserId
+      "OAuthUserObj":{
+        "UserProfile":this.UserProfile,
+        "UserID":this.UserId,
+        "Username":this.UserGivenName
+      }
     }
     this.classroomservice.JoinClassroom("http://localhost:5234/api/Room/JoinclassOAuth",payload).subscribe({
       next:()=>{

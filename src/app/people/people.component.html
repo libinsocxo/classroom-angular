@@ -1,1 +1,26 @@
-<p>people works!</p>
+<main class="Z3qXvc">
+    <div class="people-section-wrapper">
+        <div class="teachers-section">
+        <div class="teacher-sec-title-box">
+        <h2 class="VnOHwf-Tvm9db B7SYid">Teachers</h2>
+        </div>
+        <div class="teacher-sec-content">
+            <span class="ZDe7q"><img height="35px" width="35px" style="border-radius: 50px;" class="tkmmwb" aria-hidden="true" src="https://lh3.googleusercontent.com/a/ACg8ocKlUetBdchLCmCjpcRMUw3c_rWaZyshxgacg58MvBDtHtZzu1E=s96-c" data-iml="24241.899999976158"></span>
+            <span class="sCv5Q asQXV">{{classroomplp.author.authorName}}</span>
+        </div>
+        </div>
+
+
+        <div class="students-section">
+        <div class="student-sec-title-box">
+         <h2 class="VnOHwf-Tvm9db B7SYid">Classmates</h2>
+         <span class="VnOHwf-Tvm9db asQXV jg22B" style="color: rgb(19, 115, 51);;">{{totalpeoplecount}} students</span>
+        </div>
+        <div class="students-sec-content" *ngFor="let cls of classroomplp.students">
+            <span class="ZDe7q"><img height="35px" width="35px" style="border-radius: 50px;" class="tkmmwb" aria-hidden="true" [src]="cls.userProfile" data-iml="24241.899999976158"></span>
+            <span class="sCv5Q asQXV">{{cls.username}}</span>
+        </div>
+        </div>
+    </div>
+</main>
+

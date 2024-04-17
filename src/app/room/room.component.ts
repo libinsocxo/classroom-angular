@@ -52,8 +52,11 @@ export class RoomComponent {
       this.showComponentBasedOnPath(section);
     })
 
+    console.log(this.currentclassid);
+
     this.classroomservice.GetClassdetails(`http://localhost:5234/api/Room/GetClassDetailsOAuth/${this.currentclassid}`).subscribe({
       next:(data)=>{
+  
         this.className = data.className;
       },
       error:(err)=>{

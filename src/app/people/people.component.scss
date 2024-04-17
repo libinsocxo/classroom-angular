@@ -1,0 +1,100 @@
+.people-section-wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.teachers-section{
+    display: flex;
+    flex-direction: column;
+    width: 47.5rem;
+}
+.students-section{
+    display: flex;
+    flex-direction: column;
+    width: 47.5rem;
+    margin-top: 30px;
+}
+.teacher-sec-title-box{
+    border-bottom:1px solid rgb(30, 142, 62);
+    margin-bottom: 15px;
+}
+
+.teacher-sec-content{
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    border-bottom: .0625rem solid #e0e0e0;
+    padding-bottom: 15px;
+}
+.student-sec-title-box{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    border-bottom: 1px solid rgb(30, 142, 62);
+}
+
+.students-sec-content{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    border-bottom: .0625rem solid #e0e0e0;
+    padding-bottom: 15px;
+    padding-top: 10px;
+}
+
+.Z3qXvc {
+    margin: 0 auto;
+    max-width: 47.5rem;
+    padding: 1.5rem 1.5rem;
+}
+
+.B7SYid {
+    font-family: "Google Sans", Roboto, Arial, sans-serif;
+    font-size: 2rem;
+    font-weight: 400;
+    line-height: 2.5rem;
+    color: rgb(19, 115, 51);
+    fill: rgb(19, 115, 51);
+}
+
+.asQXV {
+    letter-spacing: .01785714em;
+    font-family: "Google Sans", Roboto, Arial, sans-serif;
+    font-size: .875rem;
+    font-weight: 500;
+    line-height: 1.25rem;
+    color: #3c4043;
+}
+.sCv5Q {
+    text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+    -ms-text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    margin-left: .5rem;
+    max-width: 30rem;
+}
+
+.asQXV {
+    letter-spacing: .01785714em;
+    font-family: "Google Sans", Roboto, Arial, sans-serif;
+    font-size: .875rem;
+    font-weight: 500;
+    line-height: 1.25rem;
+    color: #3c4043;
+}
+
+.jg22B {
+    padding-right: 1.5rem;
+}
+
+
+@media only screen and (max-width:500px){
+    .students-section{
+        width: 20.5rem;
+    }
+    .teachers-section{
+        width: 20.5rem;
+    }
+}
