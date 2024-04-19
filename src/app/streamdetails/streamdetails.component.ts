@@ -28,11 +28,15 @@ export class StreamdetailsComponent {
     id:"",
     for: [],
     classId: "",
-    announcement: "",
+    announcement:"",
     title: "",
     description: "",
     createdDate: "",
-    attachments: ""
+    attachments: {
+      "base64string":"",
+      "fileName":"",
+      "mimeType":""
+    }
   }
 
 
@@ -47,9 +51,10 @@ export class StreamdetailsComponent {
     })
 
    this.roomservice.GetClassdetails(`http://localhost:5234/api/Room/GetStreamDetailsOAuth/${this.streamid}`).subscribe({
-    next:(data)=>{
+    next:(data:classroomstream)=>{
       this.streamdetail = data;
-      console.log(data)
+
+      console.log(this.streamdetail)
     }
    })
    
@@ -83,10 +88,10 @@ export class StreamdetailsComponent {
   openpdf(){
     console.log("heyy")
     console.log(this.streamdetail)
-    const base64  = this.streamdetail.attachments;
-    if(base64){
+    const attachment  = this.streamdetail.attachments;
+    if(attachment){
       const byteArray = new Uint8Array(
-        atob(base64)
+        atob(attachment.base64string)
           .split("")
           .map(char => char.charCodeAt(0))
       );

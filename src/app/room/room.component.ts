@@ -43,6 +43,10 @@ export class RoomComponent {
     this.activeLink = 'stream'
   }
 
+  backTohome(){
+    this.router.navigate(['/home'])
+  }
+
   ngOnInit(){
     this.activeLink = 'stream'
     this.route.params.subscribe(params=>{

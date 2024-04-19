@@ -3,7 +3,7 @@
 
         <div class="classroom-home-left-icons" >
     
-            <div  class="pi-bar-wrapper ripple">
+            <div  class="pi-bar-wrapper ripple" (click)="backtoclassroom()">
                 <svg focusable="false" width="24" height="24" viewBox="0 0 24 24" class=" NMm5M"><path fill="#5f6368" d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"></path></svg>
             </div>
                 <div class="header-img-logo" style="background-color:rgb(230, 244, 234);height: 2rem;width: 2rem;display: flex;align-items: center;justify-content: center;border-radius: 50%;">
@@ -18,7 +18,7 @@
         <div class="profile" style="padding: 10px;">
     
       <button style="width: 80px;height: 40px;border: none;margin-top: 5px;margin-right: 12px;background-color: #1e8e3e;border-radius: 5px;
-      color: #fff;font-weight: 500;" (click)="somefunction()">Post</button>
+      color: #fff;font-weight: 500;cursor: pointer;" (click)="Uploadmaterial()">Post</button>
         </div>
      </div>
     </div>    
@@ -30,7 +30,7 @@
         </div>
         <div class="description">
             <editor [(ngModel)]="html" apiKey="xdg23gcrj1pztys8c5ti5e67lximrm8dd870y6hvt23nd9za"
-             [init]="{plugins:'lists link image table code help wordcount',placeholder: 'Description (Optional)',height:250}" (onSaveContent)="somefunction()">
+             [init]="{plugins:'lists link image table code help wordcount',placeholder: 'Description (Optional)',height:250}" >
             </editor>
         </div>
         </div>
@@ -44,6 +44,7 @@
                 <svg focusable="false" width="24" height="24" viewBox="0 0 24 24" class=" NMm5M"><path fill="#5f6368" d="M4 15h2v3h12v-3h2v3c0 1.1-.9 2-2 2H6c-1.1 0-2-.9-2-2m4.41-7.59L11 7.83V16h2V7.83l2.59 2.59L17 9l-5-5-5 5 1.41 1.41z"></path></svg>
               </div>
               <span class="SwCXPc">Upload</span>
+              {{this.base64filename}}
             </div>
         </div>
         </div>
@@ -53,7 +54,7 @@
           <div style="display: flex;gap: 10px;" (click)="opendropdown()">
           <div style="display: flex;width: 120px;height: 50px;align-items: center;justify-content: space-between;
           background-color: #f8f9fa;padding-left: 10px;padding-right: 10px;margin-top: 10px;">
-          <span>Hello</span>
+          <span>select</span>
          <div>
             <svg focusable="false" width="24" height="24" viewBox="0 0 24 24" class=" NMm5M"><path d="M7 10l5 5 5-5H7z"></path></svg>
          </div>
@@ -65,35 +66,18 @@
           </div>
           </div> -->
           </div>
-          <div  class="dropdown-box" id="Dropdownbox">
+          <div  class="dropdown-box" id="Dropdownbox" >
             <!-- for loop -->
-            <div class="dropdown-sub-box">
-             <input type="checkbox">
+            <div class="dropdown-sub-box" *ngFor="let student of getclassroompeople.students">
+             <input type="checkbox" (change)="checkboxChanged(student)">
              <div>
-                <img alt="pro-img">
+                <img alt="pro-img" [src]="student.userProfile" height="30px" width="30px" style="border-radius: 50%;">
              </div>
              <div>
-                <span>UserName</span>
+                <span>{{student.username}}</span>
              </div>
             </div>
-            <div class="dropdown-sub-box">
-                <input type="checkbox">
-                <div>
-                   <img alt="pro-img">
-                </div>
-                <div>
-                   <span>UserName</span>
-                </div>
-               </div>
-               <div class="dropdown-sub-box">
-                <input type="checkbox">
-                <div>
-                   <img alt="pro-img">
-                </div>
-                <div>
-                   <span>UserName</span>
-                </div>
-               </div>
+    
           </div>
          </div>
     </div>

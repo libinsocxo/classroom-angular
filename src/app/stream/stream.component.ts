@@ -41,6 +41,7 @@ export class StreamComponent {
     this.classroomservice.GetRoomStreams(`http://localhost:5234/api/Room/GetMyStreamOauth/${this.currentclassid}`,payload).subscribe({
       next:(data)=>{
         this.roomstreams = data;
+
       }
     })
   }

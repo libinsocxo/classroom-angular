@@ -178,7 +178,8 @@
         <div class="centered-hr"></div>
        <!-- description -->
         <div class="stream-description-content nGi02b tLDEHd j70YMc">
-            <span>{{streamdetail.description}}</span>
+           <div [innerHTML]="streamdetail.description">
+           </div> 
         </div>
 
         <div class="blobs-view"  >
@@ -189,8 +190,9 @@
     <div style="width: 100px;border-right: .0625rem solid #e0e0e0;height: 100%;">
         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmmOfYPUSPD4ZSA_xrieh_LucB_k3tdJga3A&s" style="height: 100%;width: 100px;">
     </div>
-      <div style="display: flex;flex-direction: column;margin-left: 10px;" (click)="openpdf()">
-         <span class="A6dC2c ">Hello sample pdf</span>
+      <div style="display: flex;flex-direction: column;
+      margin-left: 10px;" (click)="openpdf()" style="overflow-x: hidden;">
+         <span class="A6dC2c " >{{streamdetail.attachments?.fileName}}</span>
          <p style="color: #5f6368;">PDF</p>
       </div>
     </div>

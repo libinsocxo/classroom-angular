@@ -60,9 +60,12 @@ export interface classroomstream{
   title?: string,
   description?: string,
   createdDate?: string,
-  attachments?: string
+  attachments?: {
+    "base64string":string,
+    "fileName":string,
+    "mimeType":string
 }
-
+}
 export interface classroompeople{
   author:{
     "authorID":"",
@@ -75,4 +78,28 @@ export interface classroompeople{
     "username":""
   }]
 }
+
+
+export interface listofstudents{
+  students:[{
+    "userID":"",
+    "userProfile":"",
+    "username":""
+  }]
+}
+
+// export interface getclasspeople{
+//   // className:"",
+//   // classcode:"",
+//   // description:"",
+//   // id:{},
+//   // section:null,
+//   students:[{
+//     "userID":"",
+//     "userProfile":"",
+//     "username":""
+//   }]
+
+
+// }
 
