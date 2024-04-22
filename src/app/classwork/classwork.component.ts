@@ -14,6 +14,10 @@ export class ClassworkComponent {
   
   classid = ""
 
+
+
+
+
    
   ngOnInit(){
     this.route.params.subscribe(params=>{

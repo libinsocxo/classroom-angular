@@ -7,13 +7,16 @@ import { ClassroomService } from '../services/classroom.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { listofstudents } from '../../types';
+import { MessageService } from 'primeng/api';
+import { ToastModule } from 'primeng/toast';
 
 
 
 @Component({
   selector: 'app-material-upload',
   standalone: true,
-  imports: [ButtonModule,InputTextModule,EditorModule,FormsModule,CommonModule],
+  imports: [ButtonModule,InputTextModule,EditorModule,FormsModule,CommonModule,ToastModule],
+  providers: [MessageService],
   templateUrl: './material-upload.component.html',
   styleUrl: './material-upload.component.scss'
 })
@@ -39,7 +42,7 @@ export class MaterialUploadComponent {
  listofstudents:any[] = []
  
  constructor(private classroomservice:ClassroomService,
-  private route:ActivatedRoute,private router:Router){}
+  private route:ActivatedRoute,private router:Router,private messageService: MessageService){}
  
  uploadFile() {
   if (this.fileInput) {
@@ -116,6 +119,11 @@ opendropdown(){
 }
 
 
+// showing the badge after the successfull updating of the file
+
+showSuccess() {
+  this.messageService.add({ severity: 'success', summary: 'Material Uploaded Successfully', detail: '' });
+}
 
 
  Uploadmaterial(){
@@ -132,10 +140,23 @@ opendropdown(){
   }
   this.classroomservice.SetStreamclassroom('http://localhost:5234/api/Room/RoomStreamOAuth',body).subscribe({
     next:(data)=>{
-      console.log(data)
+      this.showSuccess()
+      this.html = ""
+      this.title = ""
+      this.base64filename = ""
+      this.getclassroompeople.students = [
+        {
+          "userID":"",
+          "userProfile":"",
+          "username":""
+        }
+      ]
+      // console.log(data)
+      
     },
     error:(error)=>{
       console.log(error)
+
     }
   })
  }

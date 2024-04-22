@@ -27,6 +27,8 @@ export class RoomComponent {
   constructor(private router:Router,private route:ActivatedRoute,private classroomservice:ClassroomService){}
   currentclassid = 0;
   activeLink: string | null = null;
+  sidebarvisible: boolean = false;
+  isOpened : boolean = false;
   // classdetails: Classroom[]=[];
   className = "";
   UserProfile = "";
@@ -47,8 +49,50 @@ export class RoomComponent {
     this.router.navigate(['/home'])
   }
 
+  
+  showsidebar(){
+      const screenWidth = window.innerWidth;
+      if(screenWidth<=600){
+        this.sidebarvisible=!this.sidebarvisible;
+      }else{
+        this.showsidebarweb();
+      }
+  }
+
+
+  showsidebarweb(){
+    //adding the css property for displaying the sidebar for web
+    if(this.isOpened==false){
+      var sidebar = document.getElementById("web-sidebar");
+      sidebar?.classList.add("sidebar-opened")
+      var homecontainer = document.getElementById("web-home-container")
+      homecontainer?.classList.add("home-container-sidebaropen")
+      var firstsectionsidebar = document.querySelector(".web-sidebar-icon-section-home-first-sec")
+      firstsectionsidebar?.classList.add("web-sidebar-icon-section-home-first-sec-opened")
+      var sidebar_icon_text_expanded = document.querySelectorAll(".sidebar-icon-text")
+      sidebar_icon_text_expanded.forEach((ele)=>{
+        ele.classList.add("sidebar-icon-text-expanded")
+      })
+      this.isOpened = true;
+    }else{
+      var sidebar = document.getElementById("web-sidebar");
+      sidebar?.classList.remove("sidebar-opened")
+      var homecontainer = document.getElementById("web-home-container")
+      homecontainer?.classList.remove("home-container-sidebaropen")
+      var firstsectionsidebar = document.querySelector(".web-sidebar-icon-section-home-first-sec")
+      firstsectionsidebar?.classList.remove("web-sidebar-icon-section-home-first-sec-opened")
+      var sidebar_icon_text_expanded = document.querySelectorAll(".sidebar-icon-text")
+      sidebar_icon_text_expanded.forEach((ele)=>{
+        ele.classList.remove("sidebar-icon-text-expanded")
+      })
+      this.isOpened = false;
+    }
+  
+  }
+
+
   ngOnInit(){
-    this.activeLink = 'stream'
+    // this.activeLink = 'stream'
     this.route.params.subscribe(params=>{
       const section = params['string']
       const roomid = params['id']
@@ -76,16 +120,19 @@ export class RoomComponent {
   showComponentBasedOnPath(path: string) {
 
     if(path === 'stream'){
+      this.activeLink = 'stream'
       this.showstream = true;
       this.showclasswork = false;
       this.showpeople = false;
     }
    
     if (path === 'classwork') {
+      this.activeLink = 'classwork'
       this.showclasswork = true;
       this.showpeople = false;
       this.showstream = false;
     } else if (path === 'people') {
+      this.activeLink = 'people'
       this.showclasswork = false;
       this.showpeople = true;
       this.showstream = false;

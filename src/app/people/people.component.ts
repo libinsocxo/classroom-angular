@@ -21,6 +21,8 @@ export class PeopleComponent {
 
   totalpeoplecount = 0;
 
+
+
   classroomplp: classroompeople = {
     author: {
         authorID: "",
@@ -35,6 +37,9 @@ export class PeopleComponent {
         },
     ]
 };
+
+
+
 
 
   ngOnInit(){

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { AvatarModule } from 'primeng/avatar';
 import { AvatarGroupModule } from 'primeng/avatargroup';
 import { classroomstream } from '../../types';
@@ -20,7 +20,7 @@ import * as pdfjsLib from 'pdfjs-dist';
 export class StreamdetailsComponent {
 
   pdfSrc :string = "";
-  constructor(private route:ActivatedRoute,private roomservice:ClassroomService){
+  constructor(private route:ActivatedRoute,private roomservice:ClassroomService,private router:Router){
     this.pdfSrc = "data:application/pdf;base64," + this.streamdetail.attachments;
   }
 
@@ -39,11 +39,57 @@ export class StreamdetailsComponent {
     }
   }
 
-
-
   streamid = ""
-
   streamurl = ""
+  sidebarvisible: boolean = false;
+  isOpened : boolean = false;
+
+
+  showsidebar(){
+
+    const screenWidth = window.innerWidth;
+    if(screenWidth<=600){
+      this.sidebarvisible=!this.sidebarvisible;
+    }else{
+      this.showsidebarweb();
+    }
+    
+  }
+  
+  
+  showsidebarweb(){
+    //adding the css property for displaying the sidebar for web
+    if(this.isOpened==false){
+      var sidebar = document.getElementById("web-sidebar");
+      sidebar?.classList.add("sidebar-opened")
+      var homecontainer = document.getElementById("web-home-container")
+      homecontainer?.classList.add("home-container-sidebaropen")
+      var firstsectionsidebar = document.querySelector(".web-sidebar-icon-section-home-first-sec")
+      firstsectionsidebar?.classList.add("web-sidebar-icon-section-home-first-sec-opened")
+      var sidebar_icon_text_expanded = document.querySelectorAll(".sidebar-icon-text")
+      sidebar_icon_text_expanded.forEach((ele)=>{
+        ele.classList.add("sidebar-icon-text-expanded")
+      })
+      this.isOpened = true;
+    }else{
+      var sidebar = document.getElementById("web-sidebar");
+      sidebar?.classList.remove("sidebar-opened")
+      var homecontainer = document.getElementById("web-home-container")
+      homecontainer?.classList.remove("home-container-sidebaropen")
+      var firstsectionsidebar = document.querySelector(".web-sidebar-icon-section-home-first-sec")
+      firstsectionsidebar?.classList.remove("web-sidebar-icon-section-home-first-sec-opened")
+      var sidebar_icon_text_expanded = document.querySelectorAll(".sidebar-icon-text")
+      sidebar_icon_text_expanded.forEach((ele)=>{
+        ele.classList.remove("sidebar-icon-text-expanded")
+      })
+      this.isOpened = false;
+    }
+  
+  }
+
+  backTohome(){
+    this.router.navigate(['/home']);
+  }
 
   async ngOnInit(){
     this.route.params.subscribe(params=>{
